@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gazemani - Stack Bowls</title>
+  
+  <!-- 使用与原始页面相同的字体和样式框架 -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  
+  <style>
+    .hero-body {
+      padding: 2rem 1.5rem;
+    }
+    .title.is-1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+    .video-grid {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .video-card {
+      flex: 1;
+      min-width: 300px;
+      max-width: 380px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .video-card:hover {
+      transform: translateY(-5px);
+    }
+    .video-card .card-header {
+      background: #f6f7f9;
+      padding: 12px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-bottom: 2px solid #ddd;
+    }
+    .video-card video {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #000;
+    }
+    .video-card .card-footer {
+      padding: 12px;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .success {
+      color: #2e7d32;
+    }
+    .failure {
+      color: #c62828;
+    }
+    .container-custom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .task-title {
+      text-align: center;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee;
+    }
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      text-align: center;
+      border-top: 1px solid #eee;
+      color: #666;
+    }
+    .badge {
+      display: inline-block;
+      background: #3273dc;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- 主要内容区 -->
+<section class="section">
+  <div class="container-custom">
+
+    <!-- 任务标题 -->
+    <div class="task-title">
+      <h2 class="title is-3" style="color: #3273dc;">Task: Stack Bowls</h2>
+      <p class="is-size-5">Stack Bowls</p>
+    </div>
+
+    <!-- 三个视频并排展示 -->
+    <div class="video-grid">
+      
+      <!-- 视频 1：π₀ 基线模型 -->
+      <div class="video-card">
+        <div class="card-header">
+          π₀
+        </div>
+        <video controls playsinline preload="metadata">
+          <source src="static/videos/compressed_videos/compressed/place_bowls_baseline_compressed.mp4" type="video/mp4">
+        </video>
+      </div>
+      
+      <!-- 视频 2：π₀ + Aux-Loss -->
+      <div class="video-card">
+        <div class="card-header">
+          π₀ + Aux-Loss
+        </div>
+        <video controls playsinline preload="metadata">
+          <source src="static/videos/compressed_videos/compressed/place_bowls_kl_compressed.mp4" type="video/mp4">
+        </video>
+      </div>
+      
+      <!-- 视频 3：π₀ + Gaze-Prompt (AimBot) -->
+      <div class="video-card">
+        <div class="card-header">
+          π₀ + Gaze-Prompt
+        </div>
+        <video controls playsinline preload="metadata">
+          <source src="static/videos/compressed_videos/compressed/place_bowls_crosshair_compressed.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+<!-- 页脚 -->
+<footer>
+  <div class="container">
+    <p>
+      Based on the <a href="https://github.com/nerfies/nerfies.github.io" target="_blank">Nerfies website template</a>.
+    </p>
+    <p style="margin-top: 8px; font-size: 0.9rem;">
+      AimBot: A Simple Auxiliary Visual Cue to Enhance Spatial Awareness of Visuomotor Policies
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
