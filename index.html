@@ -166,16 +166,15 @@
       <h2 class="title is-3">Abstract</h2>
       <div class="content has-text-justified">
         <p class="underline-caps is-size-5">
-          Vision-Language-Action (VLA) fine-tuning supplies dense per-frame visual-action supervision but leaves implicit which part of the scene the demonstrator treated as task-relevant at each timestep---what we call the instruction's temporal grounding. 
-          We introduce <em>eye-tracker-supervised gaze prompting</em> to supply this signal. 
-          An HMD eye tracker records the operator's fixation during VR teleoperation; 
-          a lightweight predictor (~50M parameters) learns to estimate fixation from RGB and language; 
-          and the prediction is rendered as a crosshair on the image input of an unchanged &pi;<sub>0</sub> policy, 
-          requiring no eye tracker or architectural modification at deployment. 
-          Across six real-world bimanual manipulation tasks, gaze prompting improves over standard fine-tuning. 
-          We further isolate two design choices: 
-          (i) the input-pixel route carries instruction-conditionality to the policy while auxiliary attention regularization with the same gaze signal does not; 
-          (ii) real gaze outperforms detection and random cues under the same rendering route, with the gap driven by anticipation and phase awareness that engineered cues lack.
+          Vision--Language--Action (VLA) fine-tuning supplies dense per-frame visual--action supervision but leaves implicit which part of the scene the demonstrator treated as task-relevant at each timestep---what we call the instruction's <em>temporal grounding</em>. 
+          We introduce <em>eye-tracker-supervised gaze prompting</em> to supply this signal: 
+          an HMD eye tracker records the operator's fixation during VR teleoperation, a lightweight predictor (~50M parameters) learns to estimate fixation from RGB and language, 
+          and the prediction is rendered as a crosshair on the image input of an unchanged &pi;<sub>0</sub> policy---with no eye tracker or architectural modification at deployment. 
+          Across six real-world bimanual manipulation tasks, gaze prompting improves over standard fine-tuning on every task, raising mean success rate from 26.3% to 56.0%. 
+          Two isolations explain the gains: 
+          (i) with the gaze signal fixed, the input-pixel route delivers both instruction-conditional attention and per-frame stage awareness over long horizons, which an auxiliary attention loss on the same gaze does not; 
+          and (ii) under the same route, real human gaze outperforms detection and random cues, a gap explained by anticipation that engineered cues structurally cannot supply.
+
         </p>
       </div>
     </div>
